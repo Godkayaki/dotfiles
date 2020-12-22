@@ -9,7 +9,11 @@ There we go, my precious dotfiles.
 - [Siji](https://github.com/stark/siji)
 - [Unifont](https://fontlibrary.org/en/font/gnu-unifont)
 
-### Other info
+### Contents
+- alacritty terminal and config.<br>
+- cava and neofetch color config and behavior.<br>
+- polybar and rofi color schemes.<br>
+
 Spotify polybar script source: https://github.com/PrayagS/polybar-spotify
 
 ### Video recorded with ffmpeg;
