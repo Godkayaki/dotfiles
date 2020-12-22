@@ -1,0 +1,43 @@
+# Colors (kinki-purple)
+colors:
+  primary:
+    background: '#292A2B'
+    foreground: '#E6E6E6'
+  normal:
+    black:   '#4a4dc3'
+    red:     '#575dc7'
+    green:   '#726CCE'
+    yellow:  '#8977d2'
+    blue:    '#bf85d6'
+    magenta: '#cb92db'
+    cyan:    '#cc9bde'
+    white:   '#E6E6E6'
+  bright:
+    black:   '#5559dd'
+    red:     '#676fec'
+    green:   '#867ff0'
+    yellow:  '#a591f7'
+    blue:    '#dd9cf6'
+    magenta: '#ebabfd'
+    cyan:    '#ecb8ff'
+    white:   '#ffffff'
+
+font:
+  size: 9
+  normal:
+    family: JetBrains Mono
+    # Style can be specified to pick a specific face.
+    # style: Italic
+
+window:
+  dimensions:
+    columns: 73
+    lines: 18
+
+  padding:
+    x: 10
+    y: 10
+
+  #position:
+   # x: 0
+    #y: 0

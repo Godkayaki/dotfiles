@@ -1,0 +1,270 @@
+[colors]
+;background = #222
+background = #292A2B
+foreground = #eee
+linecolor = #fba922
+bordercolor = #333
+accent = #FFAEF3
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[bar/top]
+bottom = true
+enable-ipc = true
+monitor = ${env:MONITOR:DVI-D-0}
+width = 100%
+height = 24
+fixed-center = true
+offset-y = -5
+;radius = 5.0
+;override-redirect = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-color = ${colors.linecolor}
+underline-size = 1
+overline-size = 2
+
+;border-size = 5
+;border-color = 0
+;border-bottom-size = 0
+border-bottom-size = 2
+border-bottom-color = ${colors.bordercolor}
+
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = dina:pixelsize=9;1
+font-1 = wuncon siji:pixelsize=12;1
+font-2 = unifont:size=6;1
+
+modules-left = spotify spotify-prev spotify-play-pause spotify-next
+;modules-center = mpd
+modules-center = xwindow
+;modules-right = xkeyboard xbacklight alsa wifi battery memory cpu date
+modules-right = xkeyboard wifi memory cpu date power-menu
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;spotify module calling scroll status;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/spotify]
+type = custom/script
+tail = true
+; prefix symbol is shown before the text
+format-prefix = "  ♪  "
+format = %{F#FFAEF3}<label>%{F-}
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+
+[module/spotify-prev]
+type = custom/script
+exec = echo " <"
+format = <label>
+click-left = playerctl previous spotify
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo " ┃┃ "
+hook-1 = echo " Pause "
+initial = 1
+click-left = playerctl play-pause spotify
+
+[module/spotify-next]
+type = custom/script
+exec = echo "> "
+format = <label>
+click-left = playerctl next spotify
+
+;;;;;;;;;;;
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+label = %percentage%%
+format-prefix = " "
+format-prefix-foreground = #666
+
+[module/memory]
+type = internal/memory
+interval = 2
+label = %percentage_used%%
+format-prefix = " "
+format-prefix-foreground = #666
+
+[module/wifi]
+type = internal/network
+interface = wlp3s0f0u3
+interval = 3.0
+;udspeed-minwidth = 0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-prefix = " "
+format-connected-prefix-foreground = #666
+format-connected-prefix-offset = -6
+label-connected = %downspeed:8%
+
+;format-disconnected = <label-disconnected>
+;format-disconnected-prefix = " "
+;format-disconnected-prefix-foreground = #666
+;label-disconnected = not connected
+;label-disconnected-foreground = #999
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = #666
+
+[module/wired]
+type = internal/network
+interface = net0
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = #666
+label-connected = %local_ip%
+
+;format-disconnected = <label-disconnected>
+;format-disconnected-prefix = " "
+;format-disconnected-prefix-foreground = #666
+;label-disconnected = not connected
+;label-disconnected-foreground = #999
+
+[module/date]
+type = internal/date
+label = %{F#726CCE}%{F-} %date%  %{F#726CCE}%{F-} %time%
+date = %Y-%m-%d
+time = %H:%M
+interval = 5
+
+[module/xbacklight]
+type = internal/xbacklight
+format = <ramp> <label>
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = #666
+label-foreground = ${root.foreground}
+
+[module/mpd]
+type = internal/mpd
+
+;format-online = <label-time>  <bar-progress>  <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>
+format-online = <label-time> %{F#88}|%{F-} <label-song> <icon-prev><icon-stop><toggle><icon-next> <icon-repeat><icon-random>
+format-online-spacing = 0
+format-online-background = #ee333333
+format-online-underline = #cc333333
+format-online-padding = 3
+
+format-offline = <label-offline>
+format-offline-foreground = #777
+
+label-offline = mpd is off
+
+label-song-maxlen = 45
+label-song-ellipsis = true
+
+label-time-foreground = #777
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+icon-random = 
+icon-repeat = 
+
+toggle-on-foreground = ${colors.accent}
+toggle-off-foreground = #777
+
+;bar-progress-width = 10
+;bar-progress-indicator = 
+;bar-progress-indicator-foreground = #bb
+;bar-progress-fill = ─
+;bar-progress-fill-foreground = #bb
+;bar-progress-fill-font = 3
+;bar-progress-empty = ─
+;bar-progress-empty-foreground = #44
+;bar-progress-empty-font = 3
+
+[module/power-menu]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-separator = /
+label-separator-margin = 1
+
+menu-0-0 = Terminate WM
+menu-0-0-foreground = ${colors.accent}
+menu-0-0-exec = bspc quit -1
+menu-0-1 = Reboot
+menu-0-1-foreground = ${colors.accent}
+menu-0-1-exec = menu-open-1
+menu-0-2 = Power off
+menu-0-2-foreground = ${colors.accent}
+menu-0-2-exec = menu-open-2
+menu-0-3 = Lock
+menu-0-3-foreground = ${colors.accent}
+menu-0-3-exec = lockscreen
+
+menu-1-0 = Cancel
+menu-1-0-foreground = ${colors.accent}
+menu-1-0-exec = menu-open-0
+menu-1-1 = Reboot
+menu-1-1-foreground = ${colors.accent}
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = Power off
+menu-2-0-foreground = ${colors.accent}
+menu-2-0-exec = sudo poweroff
+menu-2-1 = Cancel
+menu-2-1-foreground = ${colors.accent}
+menu-2-1-exec = menu-open-0
+
+[module/app-menu]
+type = custom/menu
+label-open = 
+label-close = 
+
+menu-0-0 = Vimperator
+menu-0-0-exec = web
+menu-0-1 = Termite
+menu-0-1-exec = termite
+menu-0-2 = Pcmanfm
+menu-0-2-exec = pcmanfm
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = #666
+
+label-layout = %layout%
+
+label-indicator-padding = 2
+label-indicator-background = ${colors.accent}
+
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+label-maxlen = 75
+
+[module/counter]
+type = internal/counter
+format = <counter>
+interval = 0.1
+
+; vim:ft=dosini
