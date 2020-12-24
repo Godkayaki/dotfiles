@@ -13,6 +13,7 @@ There we go, my precious dotfiles.
 - alacritty terminal and config.<br>
 - cava and neofetch color config and behavior.<br>
 - polybar and rofi color schemes.<br>
+- spicetify config, colors and theme.<br>
 
 Spotify polybar script source: https://github.com/PrayagS/polybar-spotify
 
