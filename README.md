@@ -21,5 +21,5 @@ Spotify polybar script source: https://github.com/PrayagS/polybar-spotify
 
 ### Video recorded with ffmpeg;
 ```
-ffmpeg -f x11grab -r 30 -s 1920x1080 -i :0.0 -q:v 0 -q:a 0 /$HOME/Videos/video.mpg
+ffmpeg -f x11grab -r 30 -s 1920x1080 -i :0.0 -q:v 0 -q:a 0 $HOME/Vídeos/video.mpg
 ```
