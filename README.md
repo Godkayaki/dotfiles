@@ -14,6 +14,7 @@ There we go, my precious dotfiles.
 - cava and neofetch color config and behavior.<br>
 - polybar and rofi color schemes.<br>
 - spicetify config, colors and theme.<br>
+- bashtop config file and [dracula theme](https://github.com/TechieAndroid/bashtop) (from [TechieAndroid](https://github.com/TechieAndroid))<br>
 
 Spotify polybar script source: https://github.com/PrayagS/polybar-spotify
 
