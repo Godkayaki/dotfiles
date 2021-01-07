@@ -31,12 +31,14 @@ font:
 
 window:
   dimensions:
-    columns: 73
-    lines: 18
+    # columns: 73
+    # lines: 18
+    columns: 80
+    lines: 17
 
   padding:
-    x: 10
-    y: 10
+    x: 20
+    y: 20
 
   #position:
    # x: 0

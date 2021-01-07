@@ -197,6 +197,10 @@ toggle-off-foreground = #777
 ;bar-progress-empty-foreground = #44
 ;bar-progress-empty-font = 3
 
+;;;;;;;;;;;;;;;;;;
+;powermenu module;
+;;;;;;;;;;;;;;;;;;
+
 [module/power-menu]
 type = custom/menu
 
@@ -223,11 +227,11 @@ menu-1-0-foreground = ${colors.accent}
 menu-1-0-exec = menu-open-0
 menu-1-1 = Reboot
 menu-1-1-foreground = ${colors.accent}
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = reboot
 
 menu-2-0 = Power off
 menu-2-0-foreground = ${colors.accent}
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = poweroff
 menu-2-1 = Cancel
 menu-2-1-foreground = ${colors.accent}
 menu-2-1-exec = menu-open-0
