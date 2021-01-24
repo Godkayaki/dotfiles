@@ -7,6 +7,7 @@ set $mod Mod4
 # exec --no-startup-id ~/.config/i3/resolution.sh
 exec --no-startup-id exec compton --config ~/.config/.compton.conf
 exec --no-startup-id exec dunst -config ~/.config/dunst/dunstrc-mech
+# exec --no-startup-id exec xset -dpms s off
 
 # font
 font pango:JetBrains Mono 10
@@ -42,7 +43,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn gohufont-15"
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn gohufont-15"
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 #################################################################
 # default bindings on focus and windows
@@ -233,3 +235,4 @@ bar {
         #status_command i3status
         status_command i3status | /home/danig/Github/i3status-spotify/target/release/i3status-spotify
 }
+exec xset -dpms s off
