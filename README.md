@@ -28,6 +28,4 @@ There we go, my precious dotfiles.
 - Some personal bash scripts.<br>
 
 ### Show-off
-![idle](screenshots/desktop1.png)
-![idle2](screenshots/desktop2.png)
-![idle3](screenshots/desktop3.png)
+![idle1](screenshots/desktop.png)
