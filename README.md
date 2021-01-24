@@ -1,5 +1,5 @@
 # dotfiles
-There we go, my precious dotfiles.
+Yet another nord rice with i3-gaps.
 
 ![idle](screenshots/desktop1.png)
 
