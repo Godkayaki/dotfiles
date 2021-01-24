@@ -1,4 +1,6 @@
-/spicetify/Backup
-/spicetify/Extracted
-/bashtop/error.log
-/polybar/themes/polybar-themes
+/.config/spicetify/Backup
+/.config/spicetify/Extracted
+
+# Ignore themes except dribbblish
+/.config/spicetify/Themes/*
+!/.config/spicetify/Themes/Dribbblish
