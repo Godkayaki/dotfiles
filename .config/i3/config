@@ -42,7 +42,7 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu
+# start dmenu or rofi
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn gohufont-15"
 bindsym $mod+d exec --no-startup-id rofi -show drun
 

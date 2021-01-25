@@ -16,12 +16,14 @@
     nord14: #a3be8c;
     nord15: #b48ead;
     
-    font: "unifont 18";
+    font: "scientifica 16";
     background-color: @nord1;
     border: 0px;
     margin: 0px;
     padding: 0px;
     spacing: 0px;
+    width: 400px;
+    height: 290px;
     text-color: @nord4;
 }
 #inputbar {
