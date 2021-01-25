@@ -10,7 +10,7 @@ Yet another nord rice with i3-gaps.
 - editor: [vscode with nord theme](https://marketplace.visualstudio.com/items?itemName=arcticicestudio.nord-visual-studio-code)
 - terminal: [alacritty](https://www.jetbrains.com/es-es/lp/mono/)
 - firefox config: [bento](https://github.com/MiguelRAvila/Bento)
-- applauncher: [dmenu build](https://github.com/MiguelRAvila/CleanDmenu)
+- applauncher: [rofi nord theme](https://github.com/amayer5125/nord-rofi)
 
 ### Fonts
 - [JetBrains Mono (font)](https://www.jetbrains.com/es-es/lp/mono/)
@@ -20,8 +20,8 @@ Yet another nord rice with i3-gaps.
 - [scientifica (font)](https://github.com/NerdyPepper/scientifica)
 
 ### Contents
-- i3, i3status and i3blocks configs.<br>
-- alacritty, neofetch, dunst and compton configs.<br>
+- i3, i3status and i3blocks configs (i3status running right now, still have to test i3blocks).<br>
+- alacritty, neofetch, dunst, rofi and compton configs.<br>
 - spicetify config, colors and theme.<br>
 - gtk icons and themes.<br>
 - .bashrc aliases and launch.<br>
