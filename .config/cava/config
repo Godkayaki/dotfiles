@@ -1,0 +1,5 @@
+[color]
+#gradient = 1
+#gradient_count = 1
+#gradient_color_1 = '#88c0d0'
+foreground = '#88c0d0'
