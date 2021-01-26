@@ -21,7 +21,7 @@ Yet another nord rice with i3-gaps.
 
 ### Contents
 - i3, i3status and i3blocks configs (i3status running right now, still have to test i3blocks).<br>
-- alacritty, neofetch, dunst, rofi and compton configs.<br>
+- alacritty, neofetch, dunst, cava, rofi and compton configs.<br>
 - spicetify config, colors and theme.<br>
 - gtk icons and themes.<br>
 - .bashrc aliases and launch.<br>
