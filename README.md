@@ -13,11 +13,12 @@ Yet another nord rice with i3-gaps.
 - applauncher: [rofi nord theme](https://github.com/amayer5125/nord-rofi)
 
 ### Fonts
-- [JetBrains Mono (font)](https://www.jetbrains.com/es-es/lp/mono/)
-- [Dina (font)](https://www.dcmembers.com/jibsen/download/61/)
-- [Gohufont (font)](https://github.com/koemaeda/gohufont-ttf)
-- [Unifont (font)](https://fontlibrary.org/en/font/gnu-unifont)
-- [scientifica (font)](https://github.com/NerdyPepper/scientifica)
+- [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/)
+- [Dina](https://www.dcmembers.com/jibsen/download/61/)
+- [Gohufont](https://github.com/koemaeda/gohufont-ttf)
+- [Unifont](https://fontlibrary.org/en/font/gnu-unifont)
+- [scientifica](https://github.com/NerdyPepper/scientifica)
+- [Fontawesome](https://fontawesome.com/)
 
 ### Contents
 - i3, i3status and i3blocks configs (i3status running right now, still have to test i3blocks).<br>
