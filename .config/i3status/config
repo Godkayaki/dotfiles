@@ -8,6 +8,7 @@ general {
 		color_bad = '#ba5e57'
 }
 
+#order += "spotify"
 #order += "load"
 #order += "cpu_temperature 0"
 #order += "disk /"
@@ -18,6 +19,11 @@ order += "volume master"
 order += "battery 1"
 order += "tztime date"
 order += "tztime hour"
+
+#spotify {
+#        format = "<span background='#bf616a'> /home/danig/Github/i3status-spotify/target/release/i3status-spotify </span>"
+#        #path = "/home/danig/Github/i3status-spotify/target/release/i3status-spotify"
+#}
 
 load {
         format = "<span background='#f59335'>  %5min Load </span>"
@@ -56,12 +62,13 @@ volume master {
 
 battery 1 {
 	last_full_capacity = true
-        format = "<span background='#66e5f7'>  %status %percentage </span>"
-        format_down = "No Battery"
-        status_chr = "Charging"
-        status_bat = "Battery"
-        status_unk = "Unknown"
-        status_full = "Charged"
+        integer_battery_capacity = true
+	format = "<span background='#66e5f7'> %status %percentage </span>"
+        format_down = " No Battery"
+        status_chr = " Charging"
+        status_bat = ""
+        status_unk = " Unknown"
+        status_full = " Charged"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
 }
