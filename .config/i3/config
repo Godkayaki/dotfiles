@@ -1,15 +1,10 @@
 set $mod Mod4
 
 # autostart, setting up the resolution first (forced to 1920x1080 and then setting the wallpaper)
-# exec bash ~/.config/i3/resolution.sh
-# exec --no-startup-id exec bash $HOME/.config/i3/wllp.sh
-# exec --no-startup-id nitrogen --restore
-# exec ~/.config/i3/resolution.sh
 exec nitrogen --restore
 exec --no-startup-id exec compton --config ~/.config/.compton.conf
 exec --no-startup-id exec dunst -config ~/.config/dunst/dunstrc-mech
 exec --no-startup-id exec bash ~/.config/polybar/launch.sh
-# exec --no-startup-id exec xset -dpms s off
 
 # font
 font pango:JetBrains Mono 10
@@ -239,4 +234,5 @@ gaps inner 15
 #        #~/.config/i3/spotify_current.sh
 #}
 
+#block screen sleep after x time.
 exec xset -dpms s off
