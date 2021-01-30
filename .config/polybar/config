@@ -24,8 +24,8 @@ module-margin-right = 0
 modules-left = i3
 ;modules-center = Xtitle
 modules-center = Spotify
-modules-right = pulseaudio battery Clock Shutdown
-tray-position = center
+modules-right = pulseaudio battery Clock menu
+;tray-position = right
 background = #00f2f2f2
 
 [module/i3]
@@ -142,11 +142,11 @@ format-foreground = #0d000000
 type = internal/pulseaudio
 sink = alsa_output.pci-0000_00_1f.3.analog-stereo
 use-ui-max = false
-format-volume-padding = 1
-label-volume = " %percentage%% " 
+format-volume-padding = 0
+label-volume = "  %percentage%% " 
 label-volume-foreground = #ff1d2027
 label-volume-background = #90a3ac
-label-muted   = " muted "
+label-muted   = "  muted "
 label-muted-foreground = #ff1d2027
 label-muted-background = #90a3ac
 ramp-volume-0-foreground = #ff1d2027
@@ -179,6 +179,30 @@ click-middle = xdotool key super+shift+e
 format-padding = 1
 format-foreground = #ff536f7a
 format-background = #131c23
+
+[module/menu]
+type = custom/menu
+format-spacing = 0
+label-open = "    "
+label-open-foreground = #ffbec5cb
+label-open-background = #131c23
+label-close = "  ✖  "
+label-close-foreground = #ffbec5cb
+label-close-background = #131c23
+label-separator = ""
+# power menu
+menu-0-0 = "    "
+menu-0-0-exec = i3-nagbar -t warning -m 'Logging out from i3 session.' -B 'Yes, exit i3' 'i3-msg exit'
+menu-0-0-foreground = #ffbec5cb
+menu-0-0-background = #13191f
+menu-0-1 = "    "
+menu-0-1-exec = reboot
+menu-0-1-foreground = #ffbec5cb
+menu-0-1-background = #12161c
+menu-0-2 = "    "
+menu-0-2-exec = shutdown now
+menu-0-2-foreground = #ffbec5cb
+menu-0-2-background = #111218
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
