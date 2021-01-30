@@ -8,6 +8,7 @@ set $mod Mod4
 exec nitrogen --restore
 exec --no-startup-id exec compton --config ~/.config/.compton.conf
 exec --no-startup-id exec dunst -config ~/.config/dunst/dunstrc-mech
+exec --no-startup-id exec bash ~/.config/polybar/launch.sh
 # exec --no-startup-id exec xset -dpms s off
 
 # font
@@ -219,22 +220,23 @@ gaps inner 15
 # gaps outer 15
 # border_radius 4
 
-# i3status bar
-bar {
-        position top
-        colors {
-        background #2f343f
-        statusline #2f343f
-        separator #4b5262
+# i3status bar (commented because i'm using polybar right now)
+#bar {
+#        position top
+#        colors {
+#        background #2f343f
+#        statusline #2f343f
+#        separator #4b5262
+#
+#        # colour of border, background, and text
+#        focused_workspace       #2f343f #88c0d0 #2f343f
+#        active_workspace        #2f343f #2f343f #d8dee8
+#        inactive_workspace      #2f343f #2f343f #d8dee8
+#        urgent_workspacei       #2f343f #ebcb8b #2f343f
+#        }
+#        #status_command i3status
+#        status_command i3status | /home/danig/Github/i3status-spotify/target/release/i3status-spotify
+#        #~/.config/i3/spotify_current.sh
+#}
 
-        # colour of border, background, and text
-        focused_workspace       #2f343f #88c0d0 #2f343f
-        active_workspace        #2f343f #2f343f #d8dee8
-        inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspacei       #2f343f #ebcb8b #2f343f
-        }
-        #status_command i3status
-        status_command i3status | /home/danig/Github/i3status-spotify/target/release/i3status-spotify
-        #~/.config/i3/spotify_current.sh
-}
 exec xset -dpms s off

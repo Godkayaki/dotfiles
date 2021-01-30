@@ -1,0 +1,286 @@
+[settings]
+
+[bar/Bar]
+bottom = false
+dock = false
+width = 100%
+height = 28
+lineheight = 10
+border-top = 0
+border-bottom = 0
+border-left = 0
+border-right = 0
+padding-left = 0
+padding-right = 0
+
+font-0 = CozetteVector-Regular:size=12;3
+font-1 = FontAwesome:size=10;3
+font-2 = FontAwesome5Free:style=Solid:size=10;17
+font-3 = FontAwesome5Free:style=Regular:size=10;1
+font-4 = FontAwesome5Brands:style=Regular:size=10;1
+font-5 = -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
+
+module-margin-right = 0
+modules-left = i3
+;modules-center = Xtitle
+modules-center = Spotify
+modules-right = pulseaudio battery Clock Shutdown
+tray-position = center
+background = #00f2f2f2
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+
+format-foreground = #fff2f2f2
+format-background = #000000
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+;ws-icon-0 = 1;
+;ws-icon-1 = 2;♛
+;ws-icon-2 = 3;♜
+;ws-icon-3 = 4;♝
+;ws-icon-4 = 5;♞
+ws-icon-default = ❯
+
+label-dimmed-underline = ${root.background}
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 0
+label-mode-background = #e60053
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused =  %icon%
+label-focused-foreground = #2f343f
+label-focused-background = #88c0d0
+label-focused-underline = #fba922
+label-focused-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-unfocused = %index%
+label-unfocused-padding = 1
+label-unfocused-foreground = #fff2f2f2
+label-unfocused-background = #2f343f
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 1
+
+; Separator in between workspaces
+label-separator = " "
+label-separator-padding = 0
+label-separator-foreground = #ffb52a
+label-separator-background = #2f343f
+
+[module/Spotify]
+type = custom/script
+exec = ~/.config/polybar/spotify.sh
+interval = 5
+maxlen = 40
+ellipsis = true
+scroll-up = xdotool key super+0
+scroll-down = xdotool key super+z
+format-padding = 1
+format-foreground = #ffbec5cb
+format-background = #141b22
+;format-overline = #0f0000
+;format-underline = #000000
+
+[module/Xtitle]
+type = custom/script
+exec = xtitle -s
+tail = true
+maxlen = 40
+ellipsis = true
+format-foreground = #0d000000
+
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+use-ui-max = false
+format-volume-padding = 1
+label-volume = " %percentage%% " 
+label-volume-foreground = #ff1d2027
+label-volume-background = #90a3ac
+label-muted   = " muted "
+label-muted-foreground = #ff1d2027
+label-muted-background = #90a3ac
+ramp-volume-0-foreground = #ff1d2027
+;format-ramp-volume-padding = 1
+ramp-volume-0-background = #90a3ac
+ramp-volume-1-foreground = #ff1d2027
+ramp-volume-1-background = #90a3ac
+ramp-volume-2-foreground = #ff1d2027
+ramp-volume-2-background = #90a3ac
+ramp-volume-3-foreground = #ff1d2027
+ramp-volume-3-background = #90a3ac
+
+[module/Clock]
+type = internal/date
+date = %a, %d %b | %H:%M
+interval = 5
+format-padding = 1
+format-foreground = #ff1d2027
+format-background = #536f7a
+;format-background = #0d000000
+format-overline = ${bar/Bar.background}
+format-underline = ${bar/Bar.background}
+
+[module/Shutdown]
+type = custom/script
+exec = echo ""
+click-left = shutdown now
+click-right = reboot
+click-middle = xdotool key super+shift+e
+format-padding = 1
+format-foreground = #ff536f7a
+format-background = #131c23
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = ACAD
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 2
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging><label-charging>
+;format-charging-prefix = 
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <animation-discharging><label-discharging>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-full = <label-full>
+;format-full-prefix = 
+label-full-foreground = #ff1d2027
+label-full-background = #718893
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging = "%percentage%% "
+label-charging-foreground = #ff1d2027
+label-charging-background = #718893
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = "%percentage%% "
+label-discharging-foreground = #ff1d2027
+label-discharging-background = #718893
+
+; Available tokens:
+;   %percentage% (default)
+label-full = "  Full "
+
+; Only applies if <ramp-capacity> is used
+ramp-foreground = #ff1d2027
+ramp-background = #718893
+ramp-capacity-0 = "  "
+
+ramp-capacity-1 = "  "
+
+ramp-capacity-2 = "  "
+
+; Only applies if <bar-capacity> is used
+;bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-foreground = #ff1d2027
+animation-charging-background = #718893
+
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = "  "
+animation-discharging-1 = "  "
+animation-discharging-foreground = #ff1d2027
+animation-discharging-background = #718893
+
+; Framerate in milliseconds
+;animation-discharging-framerate = 500
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
