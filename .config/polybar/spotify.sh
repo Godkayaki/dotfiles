@@ -7,5 +7,5 @@ if pgrep -x "spotify" > /dev/null; then
     title=`playerctl --player=spotify metadata title`
     echo "" $artist "-" $title
 else
-    echo ""
+    echo "Spotify not running"
 fi

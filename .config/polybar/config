@@ -3,6 +3,7 @@
 ;;;;;; Godkayaki ;;;;;;
 
 [bar/Bar]
+enable-ipc = true
 bottom = false
 ;dock = false
 width = 100%
@@ -27,7 +28,7 @@ module-margin-right = 0
 
 ;modules position
 modules-left = i3
-modules-center = spotify
+modules-center = spotify-prev spotify-play-pause spotify-next spotify
 modules-right = pulseaudio battery clock menu
 
 ;tray-position will show a simple wifi menu and aplications running in the bg such as discord.
@@ -53,7 +54,7 @@ ws-icon-default = ❯
 format = <label-state> <label-mode>
 
 ;Available tokens: %mode% 
-label-mode = %mode%
+label-mode = " %mode% "
 label-mode-padding = 0
 label-mode-background = #e60053
 
@@ -82,13 +83,13 @@ label-urgent-background = #bd2c40
 label-urgent-padding = 1
 
 ;Separator between workspaces
-label-separator = " "
+label-separator = ""
 label-separator-padding = 0
 label-separator-foreground = #ffb52a
 label-separator-background = #2f343f
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; spotify script
+;; spotify modules and script
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/spotify]
 type = custom/script
@@ -103,6 +104,31 @@ scroll-down = xdotool key super+z
 format-padding = 1
 format-foreground = #ffbec5cb
 format-background = #141b22
+
+[module/spotify-prev]
+type = custom/script
+exec = echo "  "
+format = <label>
+click-left = playerctl previous spotify
+format-foreground = #ff141b22
+format-background = #bec5cb
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo "  "
+hook-1 = echo "    "
+initial = 1
+click-left = playerctl play-pause spotify
+format-foreground = #ff141b22
+format-background = #90a3ac
+
+[module/spotify-next]
+type = custom/script
+exec = echo "  "
+format = <label>
+click-left = playerctl next spotify
+format-foreground = #ff141b22
+format-background = #bec5cb
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Window title (Xtitle)
