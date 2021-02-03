@@ -17,12 +17,7 @@ Yet another nord rice with i3-gaps.
 - applauncher: [rofi nord theme](https://github.com/amayer5125/nord-rofi)
 
 ### Fonts
-- [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/)
-- [Dina](https://www.dcmembers.com/jibsen/download/61/)
-- [Gohufont](https://github.com/koemaeda/gohufont-ttf)
-- [Unifont](https://fontlibrary.org/en/font/gnu-unifont)
-- [scientifica](https://github.com/NerdyPepper/scientifica)
-- [Fontawesome](https://fontawesome.com/)
+- [JetBrains Mono](https://www.jetbrains.com/es-es/lp/mono/), [Dina](https://www.dcmembers.com/jibsen/download/61/), [Gohufont](https://github.com/koemaeda/gohufont-ttf), [Unifont](https://fontlibrary.org/en/font/gnu-unifont), [scientifica](https://github.com/NerdyPepper/scientifica) & [Fontawesome](https://fontawesome.com/)
 
 ### Contents
 - i3 and i3status config (using polybar right now but i3status config files still work).<br>
