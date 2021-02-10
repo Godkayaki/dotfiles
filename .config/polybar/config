@@ -264,8 +264,8 @@ ramp-capacity-1 = "  " ;mid-battery
 ramp-capacity-2 = "  " ;full
 
 ;Only applies if <animation-charging> is used
-animation-charging-0 = "  "
-animation-charging-1 = "  "
+animation-charging-0 = "  "
+animation-charging-1 = "  "
 animation-charging-foreground = #ff1d2027
 animation-charging-background = #718893
 
