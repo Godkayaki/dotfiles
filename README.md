@@ -1,6 +1,6 @@
 # dotfiles
 Yet another nord rice with i3-gaps.<br>
-[reddit unixporn post](https://www.reddit.com/r/unixporn/comments/l45vqa/i3gaps_yet_another_nord_theme/)
+[reddit r/unixporn post](https://www.reddit.com/r/unixporn/comments/l45vqa/i3gaps_yet_another_nord_theme/)
 
 ![idle](screenshots/desktop1.png)
 
